@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.AccountMapper"></mapper>
+<mapper namespace="com.mypage.mapper.AccountMapper">
+
+
+<sql id="userColums">
+"id",
+"password"
+</sql>
+
+<insert id = "Insertuser" parameterType="UserDto">
+		INSERT INTO "USER" (
+			<include refid="userColumns" />
+		) VALUES (
+			  #{id}
+			, #{password}	
+		)
+	</insert>
+
+
+
+</mapper>
